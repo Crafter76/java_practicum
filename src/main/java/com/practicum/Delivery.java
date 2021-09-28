@@ -11,8 +11,10 @@ public class Delivery {
             result += 200;
         } else if (distance > 2) {
             result += 100;
-        } else {
+        } else if (distance >= 0){
             result += 50;
+        } else {
+            throw new RuntimeException("Distance ought to be more then 0 km ");
         }
 
         if (highDimension) {

@@ -18,6 +18,15 @@ public class DeliveryTests {
         });
     }
 
+    @Test
+    @DisplayName("distance < 0")
+    void negativeDistance() {
+        Delivery delivery = new Delivery();
+        assertThrows(RuntimeException.class,  () -> {
+            delivery.calc(-1, false, true, "normal");
+        });
+    }
+
 
     @ParameterizedTest(name = "distance is {0}, high dimension is {1}, fragile is {2}, workload is {3}, excepted is {4}")
     @CsvSource({
