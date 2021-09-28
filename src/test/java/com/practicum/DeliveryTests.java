@@ -31,7 +31,7 @@ public class DeliveryTests {
             "0,    false,   false,  normal, 400"
     })
 
-    void calcAll(double distance, boolean highDimension, boolean fragile, String workload, double expectedResult) {
+    void calcPositive(double distance, boolean highDimension, boolean fragile, String workload, double expectedResult) {
         Delivery delivery = new Delivery();
         assertEquals(expectedResult, delivery.calc(distance, highDimension, fragile, workload),
                 () ->"distance is " + distance + " km"
