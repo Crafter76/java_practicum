@@ -13,18 +13,16 @@ public class DeliveryTests {
     @DisplayName("distance > 30 and good is fragile")
     void fragileLongDistance() {
         Delivery delivery = new Delivery();
-        assertThrows(RuntimeException.class,  () -> {
-            delivery.calc(31, false, true, "normal");
-        });
+        assertThrows(RuntimeException.class,  () ->
+            delivery.calc(31, false, true, "normal"));
     }
 
     @Test
     @DisplayName("distance < 0")
     void negativeDistance() {
         Delivery delivery = new Delivery();
-        assertThrows(RuntimeException.class,  () -> {
-            delivery.calc(-1, false, true, "normal");
-        });
+        assertThrows(RuntimeException.class,  () ->
+            delivery.calc(-1, false, true, "normal"));
     }
 
 
