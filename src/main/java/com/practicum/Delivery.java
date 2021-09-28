@@ -44,6 +44,6 @@ public class Delivery {
                 break;
         }
 
-        return result < 400 ? 400 : result;
+        return result < 400 ? 400 : Math.round(result);
     }
 }

@@ -28,7 +28,16 @@ public class DeliveryTests {
 
     @ParameterizedTest(name = "distance is {0}, high dimension is {1}, fragile is {2}, workload is {3}, excepted is {4}")
     @CsvSource({
-            "0,    false,   false,  normal, 400"
+            "0,    false,   false,  normal,     400",
+            "1,     true,   false,  very high,  400",
+            "2,     false,  true,   high,       630",
+            "3,     true,   true,   normal,     600",
+            "9,     false,  false,  increase,   400",
+            "10,    true,   false,  increase,   400",
+            "11,    false,  true,   very high,  960",
+            "29,    true,   true,   high,       980",
+            "30,    false,  false,  high,       420",
+            "31,    true,   false,  normal,     500"
     })
 
     void calcPositive(double distance, boolean highDimension, boolean fragile, String workload, double expectedResult) {
@@ -38,6 +47,6 @@ public class DeliveryTests {
                         + " high demension is " + highDimension
                         + " fragile is " + fragile
                         + " workload is " + workload
-                        + ", delivery should cost" + expectedResult);
+                        + ", delivery should cost " + expectedResult);
     }
 }
