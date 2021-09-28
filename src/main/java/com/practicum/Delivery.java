@@ -2,7 +2,7 @@ package com.practicum;
 
 public class Delivery {
 
-    public double calc(double distance, boolean highDemension, boolean fragility, String workload) {
+    public double calc(double distance, boolean highDimension, boolean fragility, String workload) {
         double result = 0;
 
         if (distance > 30) {
@@ -15,7 +15,7 @@ public class Delivery {
             result += 50;
         }
 
-        if (highDemension) {
+        if (highDimension) {
             result += 200;
         } else {
             result += 100;
