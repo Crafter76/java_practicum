@@ -19,7 +19,7 @@ public class DeliveryTests {
     }
 
 
-    @ParameterizedTest(name = "distance = {0}, high demension is {1}, fragile is {2}, workload is {3}, excepted is  {4}")
+    @ParameterizedTest(name = "distance = {0}, high demension is {1}, fragile is {2}, workload is {3}, excepted is {4}")
     @CsvSource({
             "0,    false,   false,  normal, 400"
     })
@@ -27,10 +27,10 @@ public class DeliveryTests {
     void calcAll(double distance, boolean demensions, boolean fragile, String workload, double expectedResult) {
         Delivery delivery = new Delivery();
         assertEquals(expectedResult, delivery.calc(distance, demensions, fragile, workload),
-                () ->"distance " + distance
-                        + " demensions " + demensions
-                        + " fragile " + fragile
-                        + " workload " + workload
-                        + " should cost" + expectedResult);
+                () ->"distance is " + distance + " km"
+                        + " demensions is " + demensions
+                        + " fragile is " + fragile
+                        + " workload is " + workload
+                        + ", delivery should cost" + expectedResult);
     }
 }
